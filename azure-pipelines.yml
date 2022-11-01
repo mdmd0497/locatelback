@@ -3,5 +3,6 @@ pool:
 
 steps:
   - task: Bash@3
+    displayName: Print from bash
     inputs:
-      filePath: 'pwd'
+     script: echo $(pwd)
