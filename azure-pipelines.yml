@@ -2,7 +2,7 @@ pool:
   vmImage: 'ubuntu-20.04'
 
 steps:
-  - task: Bash@3
-    displayName: Print from bash
-    inputs:
-     script: echo $(pwd)
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: echo $(pwd)
