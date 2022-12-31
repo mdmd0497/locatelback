@@ -10,6 +10,6 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 
 ADD . /usr/src/app
 
-EXPOSE 5003
+EXPOSE 80
 
-CMD ["uvicorn", "config:app", "--host=0.0.0.0", "--port=5003"]
+CMD ["uvicorn", "config:app", "--host=0.0.0.0", "--port=80"]
