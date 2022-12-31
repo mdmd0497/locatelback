@@ -12,4 +12,4 @@ ADD . /usr/src/app
 
 EXPOSE 80
 
-CMD ["uvicorn", "config:app", "--host=0.0.0.0", "--port=80"]
+CMD ["uvicorn", "config:app", "--host=0.0.0.0", "--port=5003"]
