@@ -1,6 +1,6 @@
 # Fastapi base template for Python API projects
 
-Base template project to expand your ideas without need to build the project from scratch.
+Base template project to expand your ideas without need to set up the project from scratch.
 
 ## Installation
 
@@ -13,6 +13,11 @@ $ pip install -r requirements.txt
 ```
 
 ### Poetry
+
+Install poetry 
+```
+curl -sSL https://install.python-poetry.org | python3 -
+```
 
 ```bash
 $ poetry install

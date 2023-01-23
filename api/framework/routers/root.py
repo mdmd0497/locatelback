@@ -15,3 +15,13 @@ async def root():
             "docs": "/docs",
         }
     )
+
+
+@router.get("/health", tags=["Health"])
+async def health():
+    return JSONResponse(
+        content={
+            "status": "ok",
+            "status_code": 200,
+        }
+    )

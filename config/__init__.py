@@ -16,10 +16,9 @@ app.include_router(
 
 
 def start():
-    """Launched with `poetry run start` at root level"""
     uvicorn.run(
         "config:app",
-        host="127.0.0.1",
+        host="0.0.0.0",
         port=5003,
         reload=True,
         log_level="info"

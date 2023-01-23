@@ -2,14 +2,13 @@ FROM python:3.9-bullseye
 
 WORKDIR /usr/src/app
 
-ADD ./requirements.txt /usr/src/app
+COPY . .
 
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
-#RUN pip install -r requirements.txt
-RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
-
-ADD . /usr/src/app
+ENV PATH="${PATH}:/root/.local/share/pypoetry/venv/bin/"
+RUN ["poetry", "install", "--no-dev"]
 
 EXPOSE 5003
 
-CMD ["uvicorn", "config:app", "--host=0.0.0.0", "--port=5003"]
+CMD ["poetry", "run", "start"]
