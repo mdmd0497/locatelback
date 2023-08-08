@@ -43,4 +43,10 @@ $ poetry run start
 $ docker build -t fastapi-base .
 $ docker run -p 5003:5003 -d fastapi-base
 ```
+### Build database in Mongo
+```bash
+$ docker run -d -p 27017:27017 --name=prueba mongo:4.2
+
+```
+
 
