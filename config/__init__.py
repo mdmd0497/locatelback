@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
 from api.framework.routers import root
 
 app = FastAPI(
@@ -9,10 +9,18 @@ app = FastAPI(
     version="v1",
     docs_url="/docs"
 )
+origins = ["*"]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(
     root.router
 )
+
 
 
 def start():
